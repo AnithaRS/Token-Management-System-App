@@ -27,7 +27,7 @@ This pattern is used everywhere — **hospitals** ("Token 32 → Room 2"), **mob
 ## 🧭 How It Works
 
 ```
-Customer  →  Get Token (Patient Screen)
+Patient  →  Get Token (Patient Screen)
 Staff     →  Call Next Token (Admin Panel)
 Display   →  Shows currently-called tokens (TV screen)
 ```
@@ -62,7 +62,7 @@ Display   →  Shows currently-called tokens (TV screen)
 
 
 **Customer Screen**
-![Customer Screen](patientScreen.jpg)
+![Patient Screen](patientScreen.jpg)
 
 **Token Generated**
 ![Token Generated](patient-token.jpg)
