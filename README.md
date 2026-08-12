@@ -71,7 +71,7 @@ Display   →  Shows currently-called tokens (TV screen)
 ![Admin Panel](screenshots/adminPage.png)
 
 **Display Screen**
-![Display Screen](screenshots/Display.png)
+![Display Screen](screenshots/Display.jpg)
 
 ---
 
