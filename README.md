@@ -62,16 +62,16 @@ Display   →  Shows currently-called tokens (TV screen)
 
 
 **Customer Screen**
-![Customer Screen](screenshots/customer.png)
+![Customer Screen](screenshots/patientScreen.png)
 
 **Token Generated**
-![Token Generated](screenshots/customer-token.png)
+![Token Generated](screenshots/patient-token.png)
 
 **Admin Panel**
-![Admin Panel](screenshots/admin.png)
+![Admin Panel](screenshots/adminPage.png)
 
 **Display Screen**
-![Display Screen](screenshots/display.png)
+![Display Screen](screenshots/Display.png)
 
 ---
 
