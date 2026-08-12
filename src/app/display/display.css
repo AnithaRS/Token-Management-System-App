@@ -1,0 +1,19 @@
+.display-bg {
+  background: radial-gradient(circle at top, #1e3a8a 0%, #0f172a 45%, #020617 100%);
+}
+
+.token-card {
+  background-color: rgba(148, 163, 184, 0.1);
+  border-radius: 12px;
+  min-width: 260px;
+}
+
+.counter-badge {
+  display: inline-block;
+  background-color: #1e293b;
+  color: #60a5fa;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}

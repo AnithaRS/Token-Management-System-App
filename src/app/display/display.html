@@ -1,0 +1,22 @@
+<div class="display-bg d-flex flex-column align-items-center text-white py-5 px-3" style="min-height: 100vh;">
+
+  <h1 class="fw-bold mb-1">Token Management System</h1>
+  <p class="text-secondary mb-5">Currently Called Tokens</p>
+
+  <div *ngIf="calledTokens.length === 0" class="text-secondary fs-4">
+    No currently called tokens
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-center gap-4">
+    <div *ngFor="let token of calledTokens" class="token-card text-center p-4">
+      <span class="counter-badge">{{ token.counterCode }}</span>
+      <p class="text-secondary mt-3 mb-1">Token Number</p>
+      <h1 class="display-1 fw-bold text-warning">{{ token.tokenNumber }}</h1>
+      <p class="text-success fw-bold fs-5">{{ token.displayName }}</p>
+      <p class="text-secondary small">Status: {{ token.status }}</p>
+    </div>
+  </div>
+
+  <p class="text-secondary small mt-5">Auto refresh every 3 seconds</p>
+
+</div>

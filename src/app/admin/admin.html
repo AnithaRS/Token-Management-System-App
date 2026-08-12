@@ -1,0 +1,111 @@
+<div class="container py-4">
+
+  <h1 class="fw-bold">Token Management System</h1>
+  <p class="text-muted mb-4">Generate token, call next token, complete current token, and monitor live queue state.</p>
+
+  <!-- Stat Cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-4">
+      <div class="card p-3">
+        <p class="text-muted mb-1 small">Waiting Tokens</p>
+        <h2 class="fw-bold mb-0">{{ waitingTokens.length }}</h2>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3">
+        <p class="text-muted mb-1 small">Currently Called</p>
+        <h2 class="fw-bold mb-0">{{ calledTokens.length }}</h2>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3">
+        <p class="text-muted mb-1 small">Selected Counter</p>
+        <h2 class="fw-bold mb-0">{{ selectedCounter }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-4">
+    <!-- Admin Actions -->
+    <div class="col-md-6">
+      <div class="card p-3 h-100">
+        <h5 class="mb-3">Admin Actions</h5>
+
+        <button class="btn btn-success mb-3" (click)="createToken()">Create New Token</button>
+
+        <label class="form-label small text-muted">Counter</label>
+        <select class="form-select mb-3" [(ngModel)]="selectedCounter">
+          <option *ngFor="let c of counters" [value]="c">{{ c }}</option>
+        </select>
+
+        <div class="d-flex gap-2 mb-3">
+          <button class="btn btn-primary flex-fill" (click)="callNext()">Call Next Token</button>
+          <button class="btn btn-danger flex-fill" (click)="completeCurrent()">Complete Current Token</button>
+        </div>
+
+        <div *ngIf="message" class="alert" [ngClass]="isError ? 'alert-danger' : 'alert-success'">
+          {{ message }}
+        </div>
+
+        <a routerLink="/display" class="small">Open Display Screen →</a>
+      </div>
+    </div>
+
+    <!-- Currently Called Tokens Table -->
+    <div class="col-md-6">
+      <div class="card p-3 h-100">
+        <h5 class="mb-3">Currently Called Tokens</h5>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Counter</th>
+              <th>Display</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="calledTokens.length === 0">
+              <td colspan="4" class="text-muted text-center">No currently called tokens</td>
+            </tr>
+            <tr *ngFor="let t of calledTokens">
+              <td>{{ t.tokenNumber }}</td>
+              <td>{{ t.counterCode }}</td>
+              <td>{{ t.displayName }}</td>
+              <td><span class="badge bg-primary">{{ t.status }}</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Waiting Tokens Table -->
+  <div class="card p-3">
+    <h5 class="mb-3">Waiting Tokens</h5>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Token</th>
+          <th>Status</th>
+          <th>Counter</th>
+          <th>Display</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="waitingTokens.length === 0">
+          <td colspan="5" class="text-muted text-center">No waiting tokens</td>
+        </tr>
+        <tr *ngFor="let t of waitingTokens">
+          <td>{{ t.id }}</td>
+          <td>{{ t.tokenNumber }}</td>
+          <td><span class="badge bg-warning text-dark">{{ t.status }}</span></td>
+          <td>{{ t.counterCode || '-' }}</td>
+          <td>{{ t.displayName || '-' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

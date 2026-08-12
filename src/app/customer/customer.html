@@ -1,0 +1,32 @@
+<div class="d-flex flex-column align-items-center justify-content-center vh-100 bg-dark text-white">
+
+  <h1 class="mb-1">Token Management System</h1>
+  <p class="text-secondary mb-5">Tap below to get your token number</p>
+
+  <!-- Initial state: show Get Token button -->
+  <div *ngIf="!generatedToken" class="text-center">
+    <button
+      class="btn btn-primary btn-lg px-5 py-3 fs-3"
+      [disabled]="loading"
+      (click)="getToken()">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+      {{ loading ? 'Generating...' : 'Get Token' }}
+    </button>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-4">
+      {{ errorMessage }}
+    </div>
+  </div>
+
+  <!-- Success state: show generated token -->
+  <div *ngIf="generatedToken" class="text-center card bg-secondary bg-opacity-25 border-0 p-5">
+    <p class="text-secondary mb-2">Your Token Number</p>
+    <h1 class="display-1 fw-bold text-warning">{{ generatedToken.tokenNumber }}</h1>
+    <p class="text-secondary mt-2">Please wait for your number to be called</p>
+
+    <button class="btn btn-outline-light mt-4" (click)="requestAnother()">
+      Get Another Token
+    </button>
+  </div>
+
+</div>
