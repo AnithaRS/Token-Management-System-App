@@ -62,7 +62,7 @@ Display   →  Shows currently-called tokens (TV screen)
 
 
 **Customer Screen**
-![Customer Screen](screenshots/patientScreen.png)
+![Customer Screen](patientScreen.png)
 
 **Token Generated**
 ![Token Generated](screenshots/patient-token.png)
@@ -71,7 +71,7 @@ Display   →  Shows currently-called tokens (TV screen)
 ![Admin Panel](screenshots/adminPage.png)
 
 **Display Screen**
-![Display Screen](screenshots/Display.jpg)
+![Display Screen](Display.jpg)
 
 ---
 
