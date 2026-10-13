@@ -33,43 +33,6 @@ public class DisplayServiceImpl implements DisplayService {
 		return calledToken.stream().map(displayMapper::toDisplayTokenResponse).toList();
 	}
  	
-	
-//	@Override
-//	@Transactional
-//	public DisplayTokenResponse callNextToken(CallTokenRequest request) {
-//		TokenCounter counter = tokenCounterRepostory.findByCounterCode(request.getCounterCode())
-//				.orElseThrow(() -> new ResourseNotFoundException("Counter is notfound: " + request.getCounterCode()));
-//
-////		if (!counter.isActive()) {
-////			throw new ResourseNotFoundException("counter is inactive: " + request.getCounterCode());
-////		}
-//		
-//		if(Boolean.FALSE.equals(counter.isActive())) {
-//			throw new ResourseNotFoundException("counter is inactive :"+request.getCounterCode());
-//		}
-//
-//		TokenQueue nextWaitingToken = tokenQueueRepository
-//				.findFirstByStatusOrderByTokenNumberAsc(TokenStatus.WAITING)
-//				.orElseThrow(() -> new ResourseNotFoundException("no waiting tokwns are available"));
-//
-//		nextWaitingToken.setCounter(counter);
-//		nextWaitingToken.setStatus(TokenStatus.CALLED);
-//		nextWaitingToken.setCalleTime(LocalDateTime.now());
-//		nextWaitingToken.setUpdatedAt(LocalDateTime.now());
-//
-//		TokenQueue savedToken = tokenQueueRepository.save(nextWaitingToken);
-//
-//		return DisplayTokenResponse.builder()
-//				.tokenNumber(savedToken.getTokenNumber())
-//				.counterCode(savedToken.getCounter() != null ? savedToken.getCounter().getCounterCode() : null)
-//				.displayName(savedToken.getCounter() != null ? savedToken.getCounter().getDisplayName() : null)
-//				.status(savedToken.getStatus() != null ? savedToken.getStatus().name() : null)
-//				.build();
-//		
-////		return displayMapper.toDisplayTokenResponse(savedToken);
-//	}
-	
-	
 	@Override
 	@Transactional
 	public DisplayTokenResponse callNextToken(CallTokenRequest request) {
