@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TokenQueueResponse {   // patcent yathanavathu token nu sollra response calss
+public class TokenQueueResponse {   
 
 	private Long id;
 	private Integer  tokenNumber;
