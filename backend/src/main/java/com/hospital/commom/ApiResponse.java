@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ApiResponse<T> {      //response is anythis 
+public class ApiResponse<T> {     
 
 	private boolean success;
 	private String message;
-	private T data;        //data is response
+	private T data;      
 }
